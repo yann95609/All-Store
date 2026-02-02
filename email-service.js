@@ -8,7 +8,7 @@ const EmailService = {
   config: {
     serviceID: 'service_allstore', // All-Store Commerce
     templateID: 'template_welcome', // template_jjn145s
-    publicKey: 'YOUR_PUBLIC_KEY'    // Votre Public Key EmailJS
+    publicKey: 'YOUR_PUBLIC_KEY'    // E2bfBgcJlDXi8pG9O
   },
 
   // Initialiser EmailJS
