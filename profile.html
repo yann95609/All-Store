@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mon Compte — AllStore</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="profile.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr">
+  <div class="container">
+    <div class="hdr-top">
+      <div><a href="index.html">← Retour à l'accueil</a></div>
+    </div>
+    <div class="hdr-main">
+      <a href="index.html" class="logo"><span class="lo">All</span><span class="lg">Store</span></a>
+      <div class="hdr-actions" style="margin-left:auto;">
+        <a href="cart.html" class="hdr-act">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          <span>Panier</span>
+          <span class="badge" id="cartBadge" style="display:none;">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PROFILE -->
+<section class="profile-sec">
+  <div class="container">
+    <div class="profile-layout">
+
+      <!-- SIDEBAR -->
+      <aside class="prof-sidebar">
+        <div class="prof-card">
+          <div class="prof-avatar" id="profAvatar">A</div>
+          <div class="prof-name" id="profName">—</div>
+          <div class="prof-email" id="profEmail">—</div>
+        </div>
+        <nav class="prof-nav">
+          <div class="prof-nav-link active" data-section="dashboard">
+            <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            Tableau de bord
+          </div>
+          <div class="prof-nav-link" data-section="orders">
+            <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            Mes Commandes
+          </div>
+          <div class="prof-nav-link" data-section="wishlist">
+            <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            Mes Favoris
+          </div>
+          <div class="prof-nav-link" data-section="settings">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            Paramètres
+          </div>
+        </nav>
+        <button class="btn-logout" id="btnLogout">Se déconnecter</button>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="prof-main">
+
+        <!-- DASHBOARD -->
+        <div class="prof-section active" id="secDashboard">
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="s-label">Commandes</div>
+              <div class="s-val" id="statOrders">0</div>
+              <div class="s-sub">Total de commandes</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Dépensé</div>
+              <div class="s-val" id="statSpent">0</div>
+              <div class="s-sub">en FCFA</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Favoris</div>
+              <div class="s-val" id="statWish">0</div>
+              <div class="s-sub">Produits aimés</div>
+            </div>
+            <div class="stat-card">
+              <div class="s-label">Niveau</div>
+              <div class="s-val" style="color:#fff;font-size:18px;">Bronze</div>
+              <div class="s-sub">Membre fidèle</div>
+            </div>
+          </div>
+          <!-- Recent orders preview -->
+          <div class="prof-sec-head">
+            <h3>Dernières Commandes</h3>
+            <button onclick="Prof.showSection('orders')">Tout voir →</button>
+          </div>
+          <div class="orders-list" id="dashOrders"></div>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="prof-section" id="secOrders">
+          <div class="prof-sec-head"><h3>Mes Commandes</h3></div>
+          <div class="orders-list" id="allOrders"></div>
+        </div>
+
+        <!-- WISHLIST -->
+        <div class="prof-section" id="secWishlist">
+          <div class="prof-sec-head"><h3>Mes Favoris</h3></div>
+          <div class="wish-grid" id="wishGrid"></div>
+        </div>
+
+        <!-- SETTINGS -->
+        <div class="prof-section" id="secSettings">
+          <div class="prof-sec-head"><h3>Paramètres du Compte</h3></div>
+          <div class="settings-form">
+            <div class="f-row">
+              <div class="f-group"><label>Prénom</label><input type="text" id="setFirst"></div>
+              <div class="f-group"><label>Nom</label><input type="text" id="setLast"></div>
+            </div>
+            <div class="f-group"><label>Email</label><input type="email" id="setEmail"></div>
+            <div class="f-group"><label>Téléphone</label><input type="tel" id="setPhone" placeholder="+226 XX XX XX XX"></div>
+            <hr style="border-color:var(--c-border);margin:8px 0;">
+            <div class="f-group"><label>Nouveau mot de passe</label><input type="password" id="setPw" placeholder="Laisser vide pour ne pas modifier"></div>
+            <div class="f-group"><label>Confirmer mot de passe</label><input type="password" id="setPwConf" placeholder="Confirmez si vous changez"></div>
+            <button class="btn-save" id="btnSave">Sauvegarder</button>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER MINI -->
+<footer style="background:var(--c-bg2);border-top:1px solid var(--c-border);padding:20px 0;text-align:center;font-size:12px;color:var(--c-text3);">
+  © 2026 AllStore — Tous droits réservés
+</footer>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="db.js"></script>
+<script src="profile.js"></script>
+</body>
+</html>

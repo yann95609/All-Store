@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connexion – AllStore</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+<!-- HEADER SIMPLE -->
+<header class="hdr" style="position:relative;">
+  <div class="container">
+    <div class="hdr-main">
+      <a href="index.html" class="logo"><span class="lo">All</span><span class="lg">Store</span></a>
+      <a href="index.html" class="btn-outline" style="margin-left:auto;padding:9px 22px;font-size:13px;">← Retour</a>
+    </div>
+  </div>
+</header>
+
+<!-- AUTH SECTION -->
+<section class="auth-sec">
+  <div class="container">
+    <div class="auth-layout">
+      <!-- LEFT VISUAL -->
+      <div class="auth-visual">
+        <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&h=1000&fit=crop" alt="Shopping">
+        <div class="auth-vis-overlay"></div>
+        <div class="auth-vis-content">
+          <h2>Bienvenue sur<br><em>AllStore</em></h2>
+          <p>Votre marketplace premium en Afrique</p>
+          <ul class="auth-perks">
+            <li>Milliers de produits authentiques</li>
+            <li>Livraison rapide & sécurisée</li>
+            <li>Paiement 100% sécurisé</li>
+            <li>Service client 24/7</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT FORMS -->
+      <div class="auth-forms">
+        <!-- LOGIN -->
+        <div class="auth-form-wrap active" id="loginWrap">
+          <h1 class="auth-title">Connexion</h1>
+          <p class="auth-sub">Connectez-vous pour continuer vos achats</p>
+          <form id="loginForm" class="auth-form">
+            <div class="f-group">
+              <label>Email</label>
+              <input type="email" id="loginEmail" name="email" placeholder="exemple@email.com" required>
+            </div>
+            <div class="f-group">
+              <label>Mot de passe</label>
+              <div class="pw-wrap">
+                <input type="password" id="loginPw" name="password" placeholder="••••••••" required>
+                <button type="button" class="pw-toggle" data-target="loginPw">Voir</button>
+              </div>
+            </div>
+            <div class="auth-opts">
+              <label class="cb-label"><input type="checkbox" id="loginRemember"> Se souvenir de moi</label>
+              <a href="#" class="link-gold" id="forgotLink">Mot de passe oublié ?</a>
+            </div>
+            <button type="submit" class="btn-gold auth-btn">Se connecter</button>
+          </form>
+          <div class="auth-divider"><span>OU</span></div>
+          <div class="social-btns">
+            <button class="btn-social" id="socialGoogle">Continuer avec Google</button>
+            <button class="btn-social" id="socialFb">Continuer avec Facebook</button>
+          </div>
+          <p class="auth-switch">Pas de compte ? <a href="#" class="link-gold" id="toRegister">Créer un compte</a></p>
+        </div>
+
+        <!-- REGISTER -->
+        <div class="auth-form-wrap" id="registerWrap">
+          <h1 class="auth-title">Créer un compte</h1>
+          <p class="auth-sub">Rejoignez la communauté AllStore</p>
+          <form id="registerForm" class="auth-form">
+            <div class="f-row">
+              <div class="f-group">
+                <label>Prénom</label>
+                <input type="text" id="regFirst" name="firstname" placeholder="Jean" required>
+              </div>
+              <div class="f-group">
+                <label>Nom</label>
+                <input type="text" id="regLast" name="lastname" placeholder="Dupont" required>
+              </div>
+            </div>
+            <div class="f-group">
+              <label>Email</label>
+              <input type="email" id="regEmail" name="email" placeholder="exemple@email.com" required>
+            </div>
+            <div class="f-group">
+              <label>Téléphone (Format International)</label>
+              <input type="tel" id="regPhone" name="phone" placeholder="+226 XX XX XX XX" required>
+            </div>
+            <div class="f-group">
+              <label>Mot de passe</label>
+              <div class="pw-wrap">
+                <input type="password" id="regPw" name="password" placeholder="••••••••" required>
+                <button type="button" class="pw-toggle" data-target="regPw">Voir</button>
+              </div>
+              <div class="strength-bar"><div class="strength-fill" id="strengthFill"></div></div>
+              <span class="strength-label" id="strengthLabel">Sécurité : Faible</span>
+            </div>
+            <div class="f-group">
+              <label>Confirmer le mot de passe</label>
+              <div class="pw-wrap">
+                <input type="password" id="regPwConf" name="confirm" placeholder="••••••••" required>
+                <button type="button" class="pw-toggle" data-target="regPwConf">Voir</button>
+              </div>
+            </div>
+            <label class="cb-label"><input type="checkbox" id="regTerms" required> J'accepte les <a href="#" class="link-gold">conditions générales</a></label>
+            <label class="cb-label"><input type="checkbox" id="regNl"> Je souhaite recevoir les offres d'AllStore par email</label>
+            <button type="submit" class="btn-gold auth-btn">Créer mon compte</button>
+          </form>
+          <div class="auth-divider"><span>OU</span></div>
+          <div class="social-btns">
+            <button class="btn-social" id="socialGoogle2">S'inscrire avec Google</button>
+            <button class="btn-social" id="socialFb2">S'inscrire avec Facebook</button>
+          </div>
+          <p class="auth-switch">Déjà un compte ? <a href="#" class="link-gold" id="toLogin">Se connecter</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER SIMPLE -->
+<footer style="background:var(--c-bg2);border-top:1px solid var(--c-border);padding:20px 0;text-align:center;font-size:12px;color:var(--c-text3);">
+  © 2026 AllStore – Tous droits réservés &nbsp;|&nbsp; <a href="#" style="color:var(--c-gold);">Aide</a> &nbsp;|&nbsp; <a href="#" style="color:var(--c-gold);">Confidentialité</a>
+</footer>
+
+<div class="toast-wrap" id="toastWrap"></div>
+<script src="db.js"></script>
+<script src="email-service.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>

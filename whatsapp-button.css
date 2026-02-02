@@ -1,0 +1,119 @@
+/* AJOUT DES STYLES POUR LE BOUTON WHATSAPP FLOTTANT */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: auto;
+  padding: 14px 20px;
+  background: #25D366;
+  border-radius: 50px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  animation: pulse-whatsapp 2s infinite;
+}
+
+.whatsapp-float:hover {
+  background: #128C7E;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.whatsapp-float span {
+  display: inline-block;
+}
+
+@keyframes pulse-whatsapp {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  }
+  50% {
+    box-shadow: 0 8px 32px rgba(37, 211, 102, 0.55);
+  }
+}
+
+/* Responsive - Masquer le texte sur mobile */
+@media (max-width: 600px) {
+  .whatsapp-float {
+    width: 60px;
+    height: 60px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  
+  .whatsapp-float span {
+    display: none;
+  }
+  
+  .whatsapp-float svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Animation d'apparition */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.whatsapp-float {
+  animation: slideInUp 0.5s ease, pulse-whatsapp 2s infinite 0.5s;
+}
+
+/* NOTE: Ce fichier contient UNIQUEMENT les styles du bouton WhatsApp.
+   Il doit être ajouté au fichier styles.css existant ou inclus séparément dans le HTML.
+   
+   INSTRUCTIONS POUR L'UTILISATION:
+   
+   1. Copiez ce contenu et ajoutez-le à la fin de votre fichier styles.css
+   
+   2. Dans le fichier index.html (et autres pages où vous voulez le bouton),
+      modifiez le numéro de téléphone dans le lien WhatsApp:
+      
+      Remplacez: wa.me/22670123456
+      Par votre vrai numéro au format international (sans + ni espaces)
+      
+      Exemples:
+      - Burkina Faso: wa.me/22670123456
+      - France: wa.me/33612345678
+      - USA: wa.me/15551234567
+      
+   3. Vous pouvez aussi personnaliser le message initial en modifiant le paramètre "text":
+      ?text=Votre%20message%20ici
+      
+   4. Pour ajouter le bouton sur d'autres pages (cart.html, profile.html, etc.),
+      copiez simplement ce code HTML juste avant la balise de fermeture </body>:
+      
+      <a href="https://wa.me/VOTRENUMERO?text=Bonjour" 
+         class="whatsapp-float" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         title="Contactez-nous sur WhatsApp">
+        <svg viewBox="0 0 32 32" fill="currentColor">
+          <path d="M16 0C7.164 0 0 7.163 0 16c0 2.826.737 5.478 2.022 7.775L.084 31.41l8.035-2.066A15.937 15.937 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm9.136 22.644c-.377.945-2.226 1.738-3.063 1.856-.836.118-1.621.375-5.478-.991-4.943-1.751-8.125-6.729-8.373-7.036-.248-.308-2.02-2.688-2.02-5.125 0-2.436 1.28-3.636 1.735-4.136.455-.5 1.021-.625 1.363-.625.342 0 .683.006.982.018.315.012.735-.12 1.15.877.418.998 1.424 3.444 1.548 3.696.124.25.207.543.042.872-.165.33-.248.537-.496.827-.248.29-.52.648-.743.87-.248.248-.506.518-.218.96.29.442 1.283 2.115 2.755 3.423 1.898 1.685 3.5 2.208 3.998 2.458.5.25.79.208 1.08-.125.29-.333 1.24-1.448 1.572-1.946.33-.5.66-.414 1.113-.248.454.165 2.874 1.354 3.365 1.6.49.248.817.372.935.578.123.207.123 1.188-.254 2.133z"/>
+        </svg>
+        <span>Contactez-nous</span>
+      </a>
+*/
