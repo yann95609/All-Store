@@ -6,7 +6,7 @@
 const EmailService = {
   // Configuration EmailJS (à remplacer par vos vraies clés)
   config: {
-    serviceID: 'service_allstore', // Votre Service ID EmailJS
+    serviceID: 'service_allstore', // All-Store Commerce
     templateID: 'template_welcome', // Votre Template ID EmailJS
     publicKey: 'YOUR_PUBLIC_KEY'    // Votre Public Key EmailJS
   },
